@@ -1,0 +1,40 @@
+### Input configuration
+#
+# Read `man 5 sway-input` for more information about this section.
+
+# Hide cursor after inactivity
+seat * hide_cursor 4000
+
+# Touchpad configuration
+input type:touchpad {
+    dwt enabled
+    tap enabled
+    natural_scroll enabled
+    pointer_accel 0.5 # set mouse sensitivity (between -1 and 1)
+}
+
+input "type:keyboard" {
+    # American + Russian layout
+    xkb_layout "us,ru"
+    xkb_options caps:escape,grp:alt_shift_toggle
+
+    repeat_delay 250
+    repeat_rate 60
+}
+
+# Set keyboard layout and variant based on current system settings
+#exec_always {
+#    'swaymsg input type:keyboard xkb_layout "$(localectl status | grep "X11 Layout" | sed -e "s/^.*X11 Layout://")"'
+#    'swaymsg input type:keyboard xkb_variant "$(localectl status | grep "X11 Variant" | sed -e "s/^.*X11 Variant://")"'
+#}
+
+# # Toggle between keyboard layouts. This example has the "us" and "gb"
+# # keyboard layouts, and uses Alt+Shift to toggle between them.
+# input "type:keyboard" {
+#     xkb_layout "us,gb"
+#     xkb_options "grp:alt_shift_toggle"
+# }
+# # Assign the same binding to "pkill -RTMIN+1 waybar" to send signal to
+# # the Waybar keyboard module (so the module shows the updated layout).
+# # This example uses Alt + left Shift.
+bindsym Alt+Shift_L exec "pkill -RTMIN+1 waybar"
