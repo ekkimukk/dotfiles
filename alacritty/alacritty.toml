@@ -4,6 +4,10 @@ size = 15.0
 [font.normal]
 family = "Iosevka"
 
+[window.dimensions]
+columns = 90
+lines = 20
+
 # Colors (Gruvbox dark)
 
 # Default colors
