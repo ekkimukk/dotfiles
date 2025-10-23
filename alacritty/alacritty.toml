@@ -2,7 +2,7 @@
 size = 15.0
 
 [font.normal]
-family = "Iosevka"
+family = "Iosevka Term"
 
 [window.dimensions]
 columns = 90
