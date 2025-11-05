@@ -1,0 +1,194 @@
+/* =============================================================================
+ *
+ * Waybar configuration
+ *
+ * Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
+ *
+ * =========================================================================== */
+
+/* -----------------------------------------------------------------------------
+ * Colors definition - Gruvbox
+ * -------------------------------------------------------------------------- */
+@define-color bg #282828;
+@define-color fg #ebdbb2;
+@define-color highlight #fe8019;
+@define-color yellow #d79921;
+@define-color red #cc241d;
+@define-color orange #d65d0e;
+
+/* -----------------------------------------------------------------------------
+ * Keyframes
+ * -------------------------------------------------------------------------- */
+
+@keyframes blink-warning {
+    70% {
+        color: @fg;
+    }
+
+    to {
+        color: @fg;
+        background-color: @orange;
+    }
+}
+
+@keyframes blink-critical {
+    70% {
+      color: @fg;
+    }
+
+    to {
+        color: @fg;
+        background-color: @red;
+    }
+}
+
+/* -----------------------------------------------------------------------------
+ * Base styles
+ * -------------------------------------------------------------------------- */
+
+/* Reset all styles */
+* {
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* The whole bar */
+#waybar {
+    background: transparent;
+    color: @fg;
+    background-color: @bg;
+    font-family: Iosevka, JetBrainsMono;
+    font-size: 13px;
+}
+
+/* Every modules */
+#mode,
+#network,
+#custom-keyboard-layout,
+#idle_inhibitor,
+#cpu,
+#memory,
+#backlight,
+#pulseaudio,
+#battery,
+#clock,
+#tray {
+    padding: 0.5rem 0.6rem;
+    margin: 1px 0px;
+}
+
+/* -----------------------------------------------------------------------------
+ * Module styles
+ * -------------------------------------------------------------------------- */
+
+#custom-launcher {
+    margin-left: 10px;
+    margin-right: 10px;
+    color: @highlight;
+}
+
+#workspaces {
+    font-size: 13px;
+}
+
+#workspaces button {
+    border-radius: 0px;
+    color: @fg;
+    padding: 1px 2px;
+    margin-right: 2px;
+    margin-left: 2px;
+    font-weight: normal;
+}
+
+#workspaces button.focused {
+    background-color: @bg;
+    color: @fg;
+    font-weight: bold;
+}
+
+#workspaces button.urgent {
+    background-color: @bg;
+    color: @bg;
+    font-weight: bold;
+}
+
+#mode {
+    background: @highlight;
+    color: @bg;
+    margin-left: 5px;
+    padding: 7px;
+}
+
+#window {
+    font-weight: bold;
+}
+
+#network.disconnected {
+    color: @orange;
+}
+
+#cpu.warning {
+    color: @yellow;
+}
+
+#cpu.critical {
+    color: @red;
+}
+
+#memory {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#memory.warning {
+    color: @yellow;
+ }
+
+#memory.critical {
+    color: @red;
+    animation-name: blink-critical;
+    animation-duration: 2s;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#pulseaudio.muted {
+    color: @orange;
+}
+
+#battery.warning {
+    color: @yellow;
+}
+
+#battery.critical {
+    color: @red;
+}
+
+#battery.warning.discharging {
+    animation-name: blink-warning;
+    animation-duration: 3s;
+}
+
+#battery.critical.discharging {
+    animation-name: blink-critical;
+    animation-duration: 2s;
+}
+
+#custom-power {
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 15px;
+    color: @red;
+}
+
+#clock {
+    color: @fg;
+}
+
+#tray {
+    color: @fg;
+}
