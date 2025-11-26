@@ -4,7 +4,7 @@ SELECTION="$(printf "󰌾 Lock\n󰤄 Suspend\n󰍃 Log out\n Reboot\n Rebo
 
 case $SELECTION in
     *"󰌾 Lock"*)
-        gtklock;;
+        swaylock;;
     *"󰤄 Suspend"*)
         systemctl suspend;;
     *"󰍃 Log out"*)

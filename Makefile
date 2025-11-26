@@ -11,5 +11,6 @@ sync:
 	cp -r $(home_config_dir)/fuzzel     . 
 	cp -r $(home_config_dir)/nvim       . 
 	cp -r $(home_config_dir)/sway       . 
+	cp -r $(home_config_dir)/swaylock   . 
 	cp -r $(home_config_dir)/tmux       . 
 	cp -r $(home_config_dir)/waybar     . 
