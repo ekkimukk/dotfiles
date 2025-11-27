@@ -16,7 +16,7 @@ exec_always swayidle -w before-sleep "swaylock -d"
 exec mako
 
 # Start foot server
-exec_always --no-startup-id foot --server
+# exec_always --no-startup-id foot --server
 
 # Autotiling
 exec autotiling
@@ -32,10 +32,13 @@ exec nm-applet --indicator
 exec sleep 2 && firewall-applet
 
 # Welcome App
-exec eos-welcome --startdelay=3
+# exec eos-welcome --startdelay=3
 
 # Sway Fader
 # exec python3 ~/.config/sway/scripts/swayfader.py
+
+# Day/night gamma adjustments
+exec wlsunset -S 6:30 -s 18:30
 
 # nwg-drawer
 exec_always nwg-drawer -r -c 7 -is 90 -mb 10 -ml 50 -mr 50 -mt 10
