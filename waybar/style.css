@@ -61,7 +61,7 @@
   color: @fg;
   background-color: @bg;
   font-family: MonoLisa, Iosevka, JetBrainsMono;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 /* Every modules */
