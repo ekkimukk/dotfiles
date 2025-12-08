@@ -1,8 +1,8 @@
 [font]
-size = 15.0
+size = 14.5
 
 [font.normal]
-family = "Iosevka Term"
+family = "JetBrains Mono"
 
 [window.dimensions]
 columns = 90
