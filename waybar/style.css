@@ -60,7 +60,7 @@
   background: transparent;
   color: @fg;
   background-color: @bg;
-  font-family: MonoLisa, Iosevka;
+  font-family: "Roboto Mono", "JuliaMono", "Iosevka";
   font-size: 14px;
 }
 
