@@ -2,7 +2,7 @@
 size = 15.0
 
 [font.normal]
-family = "Iosevka Term"
+family = "IBM Plex Mono"
 
 [window.dimensions]
 columns = 90
