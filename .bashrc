@@ -16,3 +16,6 @@ export EDITOR='vim'
 
 # PS1='[\u@\h \W]\$ '
 PS1='\[\033[0m\] \[\033[0;36m\]\W\[\033[0m\] '
+
+# Created by `pipx` on 2026-01-19 14:58:14
+export PATH="$PATH:/home/eg/.local/bin"
