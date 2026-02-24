@@ -8,7 +8,7 @@ set $up k
 set $right l
 
 # Set default terminal emulator
-set $term alacritty	
+set $term alacritty
 
 # Application launcher
 set $launcher fuzzel
@@ -231,8 +231,8 @@ set $powermenu ~/.config/sway/scripts/power_menu.sh
 #
     # Snip a selection and pipe to swappy
     bindsym print exec grim -g "$(slurp)" - | swappy -f -
+    bindsym $mod+Shift+p exec grim -g "$(slurp)" - | swappy -f -
     # Screenshot a window and pipe to swappy
     bindsym Ctrl+Print exec ~/.config/sway/scripts/screenshot_window.sh
     # Screenshot the current display and pipe to swappy
     bindsym Shift+Print exec ~/.config/sway/scripts/screenshot_display.sh
-
