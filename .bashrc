@@ -9,6 +9,7 @@ alias ls='ls --color=auto'
 alias l='ls -AlFh'
 alias grep='grep --color=auto'
 alias v='nvim'
+alias k='kubectl'
 alias ..='cd ..'
 alias ...='cd ../..'
 
