@@ -1,3 +1,10 @@
+# For screen sharing in Firefox
+exec --no-startup-id /usr/lib/xdg-desktop-portal -r
+exec --no-startup-id /usr/lib/xdg-desktop-portal-wlr
+exec export MOZ_ENABLE_WAYLAND=1
+exec export XDG_SESSION_TYPE=wayland
+exec export XDG_CURRENT_DESKTOP=sway
+
 # Auth with polkit-gnome:
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
@@ -24,7 +31,7 @@ exec autotiling
 # cliphist
 exec wl-paste --type text --watch cliphist store
 exec wl-paste --type image --watch cliphist store
-     
+
 # Network Applet
 exec nm-applet --indicator
 
