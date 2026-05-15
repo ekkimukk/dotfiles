@@ -2,7 +2,10 @@
 size = 15.0
 
 [font.normal]
-family = "Iosevka"
+# family = "Iosevka"
+# family = "ZedMono Nerd Font"
+family = "Aporetic Sans Mono"
+# family = "FantasqueSansM Nerd Font"
 
 [window.dimensions]
 columns = 90
