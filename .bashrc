@@ -65,7 +65,6 @@ test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors
 alias ls='ls --color=auto'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
-
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
@@ -77,6 +76,8 @@ alias v='nvim'
 alias k='kubectl'
 alias ..='cd ..'
 alias ...='cd ../..'
+
+export EDITOR=nvim
 
 # created by `pipx` on 2026-01-19 14:58:14
 export PATH="$PATH:/home/eg/.local/bin"
