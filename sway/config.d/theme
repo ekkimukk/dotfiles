@@ -2,14 +2,14 @@
 exec_always ~/.config/sway/scripts/import-gsettings
 
 # Cursor theme
-seat seat0 xcursor_theme capitaine-cursors 24
+# seat seat0 xcursor_theme capitaine-cursors 24
 
 # Set inner/outer gaps
 gaps inner 4
 gaps outer 0
 
 # Hide titlebar on windows:
-default_border pixel 2
+default_border pixel 1
 
 # Default Font
 # font pango:Noto Sans Regular 10
@@ -19,7 +19,7 @@ font pango:Iosevka 10
 smart_borders off
 
 # Set wallpaper:
-exec ~/.azotebg
+output * background ~/pictures/walls/flowers.jpg fill
 
 # Title format for windows
 for_window [shell="xdg_shell"] title_format "%title (%app_id)"

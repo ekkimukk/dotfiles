@@ -19,6 +19,9 @@ set $menu nwg-drawer
 # Power Menu
 set $powermenu ~/.config/sway/scripts/power_menu.sh
 
+# Default browser
+set $browser firefox
+
 ### Key bindings
 #
 # Basics:
@@ -31,8 +34,8 @@ set $powermenu ~/.config/sway/scripts/power_menu.sh
     bindsym $mod+Return exec $term
 
     # Open the power menu
-    bindsym $mod+Shift+e exec $powermenu
-    bindcode $mod+Shift+26 exec $powermenu
+    bindsym $mod+e exec $powermenu
+    # bindcode $mod+Shift+26 exec $powermenu
 
     # Kill focused window
     bindsym $mod+q kill
@@ -134,9 +137,9 @@ set $powermenu ~/.config/sway/scripts/power_menu.sh
     bindcode $mod+55 splith
 
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+    bindsym $mod+Shift+s layout stacking
+    bindsym $mod+Shift+w layout tabbed
+    bindsym $mod+Shift+e layout toggle split
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
@@ -217,8 +220,8 @@ set $powermenu ~/.config/sway/scripts/power_menu.sh
     bindcode $mod+57 exec thunar
 
     # Launch the browser
-    bindsym $mod+o exec firefox
-    bindcode $mod+32 exec firefox
+    bindsym $mod+o exec $browser
+    bindcode $mod+32 exec $browser
 
     # Launch the clipboard manager
     bindsym $mod+Ctrl+v exec cliphist list | fuzzel -d -w 90 -l 30 -p "Select an entry to copy it to your clipboard buffer:"| cliphist decode | wl-copy

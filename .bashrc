@@ -27,8 +27,13 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/system/bin/sh lesspipe)"
 
-# Using color promt
+# promt
 PS1='\[\033[0m\] \[\033[0;36m\]\W\[\033[0m\] '
+
+# start up tmux
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux
+fi
 
 # some better definitions
 alias cp="cp -i"     # confirm before overwriting something
@@ -71,7 +76,6 @@ alias egrep='egrep --color=auto'
 
 # more aliases
 alias l='ls -AlFh'
-alias grep='grep --color=auto'
 alias v='nvim'
 alias k='kubectl'
 alias ..='cd ..'
@@ -88,3 +92,11 @@ export PATH=/home/eg/.opencode/bin:$PATH
 
 # cargo
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# nix
+source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

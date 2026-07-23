@@ -1,4 +1,7 @@
 # For screen sharing in Firefox
+exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+exec systemctl --user start pipewire pipewire-pulse wireplumber xdg-desktop-portal xdg-desktop-portal-wlr
+
 exec --no-startup-id /usr/lib/xdg-desktop-portal -r
 exec --no-startup-id /usr/lib/xdg-desktop-portal-wlr
 exec export MOZ_ENABLE_WAYLAND=1
@@ -45,7 +48,7 @@ exec sleep 2 && firewall-applet
 # exec python3 ~/.config/sway/scripts/swayfader.py
 
 # Day/night gamma adjustments
-exec wlsunset -S 6:30 -s 22:00
+# exec wlsunset -S 6:30 -s 22:00
 
 # nwg-drawer
 exec_always nwg-drawer -r -c 7 -is 90 -mb 10 -ml 50 -mr 50 -mt 10

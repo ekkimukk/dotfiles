@@ -1,11 +1,12 @@
 [font]
-size = 15.0
+size = 16.5
 
 [font.normal]
 # family = "Iosevka"
+# family = "Monofoki"
 # family = "ZedMono Nerd Font"
-family = "Aporetic Sans Mono"
 # family = "FantasqueSansM Nerd Font"
+family = "Aporetic Serif Mono"
 
 [window.dimensions]
 columns = 90
@@ -18,11 +19,12 @@ decorations = "none"
 
 # Default colors
 [colors.primary]
-# hard contrast background = = '#1d2021'
-#background = '#282828'
-background = '#000000'
-# soft contrast background = = '#32302f'
-foreground = '#ebdbb2'
+# background = "#32302f"
+# background = "#282828"
+# background = "#1d2021"
+background = "#100F0F"
+# background = "#000000"
+foreground = "#ebdbb2"
 
 # Normal colors
 [colors.normal]

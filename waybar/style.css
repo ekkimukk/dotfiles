@@ -10,8 +10,11 @@
  * Colors definition - Gruvbox
  * -------------------------------------------------------------------------- */
 @define-color bg #000000;
-/* @define-color bg #282828; */
 @define-color fg #ebdbb2;
+
+/* @define-color bg #ebdbb2; */
+/* @define-color fg #282828; */
+
 @define-color highlight #fe8019;
 @define-color yellow #d79921;
 @define-color red #cc241d;
@@ -61,8 +64,9 @@
   background: transparent;
   color: @fg;
   background-color: @bg;
-  font-family: "Iosevka";
-  font-size: 14px;
+  /* font-family: "Terminus (TTF)"; */
+  font-family: "Consoleet Terminus\-18";
+  font-size: 13px;
 }
 
 /* Every modules */
@@ -124,7 +128,7 @@
 }
 
 #window {
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 #network.disconnected {
@@ -171,7 +175,7 @@
 
 #battery.warning.discharging {
   animation-name: blink-warning;
-  animation-duration: 3s;
+  animation-duration: 2s;
 }
 
 #battery.critical.discharging {

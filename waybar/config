@@ -1,9 +1,10 @@
 {
   "layer": "top", // Waybar at top layer
-  "position": "top", // Waybar position (top|bottom|left|right)
-  "height": 10, // Auto-height is used when commented
+  "position": "bottom", // Waybar position (top|bottom|left|right)
+  //"height": 10, // Auto-height is used when commented
   // "width": 1280, // Full screen width when commented
-  "spacing": 5, // Gaps between modules (in px)
+  "spacing": 4, // Gaps between modules (in px)
+
   // See `man waybar` for more configuration options
   // Configuration - modules-left
   "modules-left": [
@@ -12,11 +13,7 @@
     "sway/mode",
     "sway/window"
   ],
-  "custom/launcher": {
-    "format": "<span size='x-large'></span>",
-    "on-click": "exec nwg-drawer",
-    "tooltip": false
-  },
+
   "sway/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
@@ -32,6 +29,7 @@
       "10": "10"
     }
   },
+
   "sway/mode": {
     "format": "<span style=\"italic\">{}</span>",
     "tooltip": false
@@ -41,6 +39,7 @@
     //"all-outputs": true, // Active window shows only on active display when commented
     "max-length": 120
   },
+
   // Configuration - modules-center
   "modules-center": [
     "clock"
@@ -52,7 +51,7 @@
     "format-ethernet": "󰈀 {bandwidthDownBits:>} 󰶡 {bandwidthUpBits:>} 󰶣",
     "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}",
     "format-disconnected": " Disconnected",
-    "on-click": "footclient -T waybar_nmtui -e nmtui",
+    "on-click": "alacritty -T waybar_nmtui -e nmtui",
     "interval": 2
   },
   // Configuration - modules-right
@@ -65,8 +64,8 @@
     "pulseaudio",
     "battery",
     //"network",
-    "tray",
-    "custom/power"
+    "tray"
+    //"custom/power"
   ],
   "custom/keyboard-layout": {
     //"exec": "i=$(swaymsg -t get_inputs); echo \"\"; echo \"$i\" | grep -m1 'xkb_active_layout_name' | cut -d '\"' -f4",
@@ -95,12 +94,12 @@
       "warning": 70,
       "critical": 90
     },
-    "on-click": "footclient -T waybar_htop -e htop"
+    "on-click": "alacritty -T waybar_htop -e htop"
   },
   "memory": {
     "interval": 5,
     "format": " {:>3}%",
-    "on-click": "footclient -T waybar_htop -e htop",
+    "on-click": "alacritty -T waybar_htop -e htop",
     "states": {
       "warning": 70,
       "critical": 90
