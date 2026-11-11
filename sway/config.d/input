@@ -13,7 +13,11 @@ input type:touchpad {
     pointer_accel 0.5 # set mouse sensitivity (between -1 and 1)
 }
 
-input "type:keyboard" {
+input type:pointer {
+  pointer_accel 0
+}
+
+input type:keyboard {
     # American + Russian layout
     xkb_layout "us,ru"
     xkb_options caps:escape,grp:alt_shift_toggle

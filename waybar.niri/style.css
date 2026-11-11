@@ -1,0 +1,205 @@
+/* =============================================================================
+ *
+ * Waybar configuration
+ *
+ * Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
+ *
+ * =========================================================================== */
+
+/* -----------------------------------------------------------------------------
+ * Colors definition - приглушённые (muted) тона
+ * -------------------------------------------------------------------------- */
+@define-color bg #000000;          /* чисто чёрный фон модулей */
+@define-color fg #c0b8a8;          /* мягкий бежево-серый текст */
+
+/* Блеклые цвета для рамок (больше не используются, оставлены для справки) */
+@define-color highlight #b8a080;
+@define-color yellow   #b0a070;
+@define-color red      #a07070;
+@define-color orange   #b08060;
+@define-color blue     #708090;
+@define-color green    #808060;
+@define-color purple   #806080;
+@define-color aqua     #608080;
+@define-color gray     #888888;
+
+/* -----------------------------------------------------------------------------
+ * Keyframes
+ * -------------------------------------------------------------------------- */
+
+@keyframes blink-warning {
+  70% {
+    color: @fg;
+  }
+
+  to {
+    color: @fg;
+    background-color: @orange;
+  }
+}
+
+@keyframes blink-critical {
+  70% {
+    color: @fg;
+  }
+
+  to {
+    color: @fg;
+    background-color: @red;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+ * Base styles
+ * -------------------------------------------------------------------------- */
+
+/* Reset all styles */
+* {
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* The whole bar – полностью прозрачный */
+#waybar {
+  background: transparent;
+  color: @fg;
+  font-family: "Aporetic Serif Mono";
+  font-size: 14px;
+}
+
+/* Общие стили для всех модулей-коробочек – без рамок */
+#mode,
+#network,
+#custom-keyboard-layout,
+#idle_inhibitor,
+#cpu,
+#memory,
+#backlight,
+#pulseaudio,
+#battery,
+#clock,
+#tray,
+#custom-launcher,
+#workspaces,
+#window,
+#custom-power {
+  background-color: #000000;        /* чисто чёрный фон */
+  border-radius: 6px;              /* закругление */
+  border: none;                    /* рамки отсутствуют */
+  padding: 0.4rem 0.6rem;
+  margin: 1px 0px;
+}
+
+/* Индивидуальные стили (без рамок) */
+#custom-launcher {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: @highlight;
+}
+
+#workspaces {
+  /* font-size: 13px; */
+}
+
+#workspaces button {
+  border-radius: 0px;
+  color: @fg;
+  padding: 1px 2px;
+  margin-right: 2px;
+  margin-left: 2px;
+  font-weight: normal;
+  background: transparent;
+}
+
+#workspaces button.focused {
+  background-color: transparent;
+  color: @fg;
+  font-weight: bold;
+}
+
+#workspaces button.urgent {
+  background-color: transparent;
+  color: @bg;
+  font-weight: bold;
+}
+
+#window {
+  /* font-weight: bold; */
+}
+
+#mode {
+  background-color: #000000;
+  border-radius: 6px;
+  color: @highlight;
+  margin-left: 5px;
+  padding: 7px;
+}
+
+#network.disconnected {
+  color: @orange;
+}
+
+#cpu.warning {
+  color: @yellow;
+}
+
+#cpu.critical {
+  color: @red;
+}
+
+#memory {
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#memory.warning {
+  color: @yellow;
+}
+
+#memory.critical {
+  color: @red;
+  animation-name: blink-critical;
+  animation-duration: 2s;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pulseaudio.muted {
+  color: @orange;
+}
+
+#battery.warning {
+  color: @yellow;
+}
+
+#battery.critical {
+  color: @red;
+}
+
+#battery.warning.discharging {
+  animation-name: blink-warning;
+  animation-duration: 2s;
+}
+
+#battery.critical.discharging {
+  animation-name: blink-critical;
+  animation-duration: 2s;
+}
+
+#clock {
+  color: @fg;
+}
+
+#tray {
+  color: @fg;
+}
+
+#custom-power {
+  margin-left: 15px;
+  margin-right: 15px;
+  color: @red;
+}

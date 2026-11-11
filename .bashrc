@@ -31,9 +31,9 @@ shopt -s checkwinsize
 PS1='\[\033[0m\] \[\033[0;36m\]\W\[\033[0m\] '
 
 # start up tmux
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux
-fi
+# if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+#   exec tmux
+# fi
 
 # some better definitions
 alias cp="cp -i"     # confirm before overwriting something
@@ -78,6 +78,7 @@ alias egrep='egrep --color=auto'
 alias l='ls -AlFh'
 alias v='nvim'
 alias k='kubectl'
+alias g='git'
 alias ..='cd ..'
 alias ...='cd ../..'
 
@@ -100,3 +101,7 @@ source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+# Qwen Code PATH block begin
+export PATH='/home/eg/.local/bin':$PATH
+# Qwen Code PATH block end

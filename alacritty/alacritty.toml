@@ -1,12 +1,18 @@
 [font]
-size = 16.5
+size = 16
 
 [font.normal]
-# family = "Iosevka"
-# family = "Monofoki"
-# family = "ZedMono Nerd Font"
+# family = "Iosevka Nerd Font"
+# family = "Monofoki Nerd Font"
+# family = "Mononoki Nerd Font"
 # family = "FantasqueSansM Nerd Font"
-family = "Aporetic Serif Mono"
+# family = "Aporetic Sans Mono"
+family = "AporeticSansMono Nerd Font"
+# family = "Aporetic Serif Mono"
+# family = "ZedMono Nerd Font"
+# family = "JuliaMono"
+# family = "Ioskeley Mono Term"
+# family = "ComicShannsMono Nerd Font Propo"
 
 [window.dimensions]
 columns = 90
@@ -19,12 +25,10 @@ decorations = "none"
 
 # Default colors
 [colors.primary]
-# background = "#32302f"
-# background = "#282828"
-# background = "#1d2021"
-background = "#100F0F"
-# background = "#000000"
-foreground = "#ebdbb2"
+background = '#0d2021'
+# background = '#282828'
+# soft contrast background = = '#32302f'
+foreground = '#ebdbb2'
 
 # Normal colors
 [colors.normal]
@@ -47,3 +51,4 @@ blue    = '#83a598'
 magenta = '#d3869b'
 cyan    = '#8ec07c'
 white   = '#ebdbb2'
+

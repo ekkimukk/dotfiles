@@ -1,0 +1,336 @@
+* {
+    font-family: "GohuFont 14 Nerd Font Propo";
+    font-size: 14px;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background-color: transparent;
+    color: #e0e0e0;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/* ===== WORKSPACES ===== */
+#workspaces {
+    background-color: rgba(60, 60, 60, 0.7);
+    margin: 2px 4px;
+    padding: 0;
+    border-radius: 6px;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    background-color: transparent;
+    color: #d0d0d0;
+    border: none;
+    box-shadow: none;
+    border-radius: 6px;
+}
+
+#workspaces button:hover {
+    background-color: rgba(80, 80, 80, 0.8);
+    color: #f0f0f0;
+}
+
+#workspaces button.focused,
+#workspaces button.active {
+    background-color: rgba(196, 114, 42, 0.85);
+    color: #f5f0e8;
+    font-weight: bold;
+}
+
+#workspaces button.urgent {
+    background-color: rgba(220, 80, 80, 0.85);
+    color: #202020;
+}
+
+/* ===== MODULES COMMON ===== */
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd,
+#language,
+#keyboard-state,
+#custom-tmux {
+    padding: 0 10px;
+    margin: 2px 3px;
+    border-radius: 6px;
+}
+
+/* ===== TMUX / WINDOW (нейтральный серый) ===== */
+#custom-tmux,
+#window {
+    background-color: rgba(70, 70, 70, 0.8);
+    color: #d0d0d0;
+}
+
+/* ===== PULSEAUDIO (тёплый красно-оранжевый) ===== */
+#pulseaudio {
+    background-color: rgba(200, 110, 90, 0.85);
+    color: #252525;
+}
+
+#pulseaudio.muted {
+    background-color: rgba(100, 100, 100, 0.8);
+    color: #909090;
+}
+
+#pulseaudio:hover {
+    background-color: rgba(220, 130, 110, 0.9);
+}
+
+/* ===== BATTERY (оранжевый) ===== */
+#battery {
+    background-color: rgba(210, 130, 80, 0.85);
+    color: #252525;
+}
+
+#battery.charging,
+#battery.plugged {
+    background-color: rgba(180, 150, 70, 0.85);
+    color: #252525;
+}
+
+#battery.critical:not(.charging) {
+    background-color: rgba(220, 80, 70, 0.9);
+    color: #202020;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: rgba(220, 80, 70, 0.9);
+        color: #202020;
+    }
+}
+
+/* ===== CPU (жёлто-оранжевый) ===== */
+#cpu {
+    background-color: rgba(200, 160, 80, 0.85);
+    color: #252525;
+}
+
+/* ===== DISK (жёлтый) ===== */
+#disk {
+    background-color: rgba(190, 170, 70, 0.85);
+    color: #252525;
+}
+
+/* ===== NETWORK (жёлто-зелёный) ===== */
+#network {
+    background-color: rgba(150, 170, 80, 0.85);
+    color: #252525;
+}
+
+#network.disconnected {
+    background-color: rgba(200, 90, 80, 0.85);
+    color: #202020;
+}
+
+/* ===== MEMORY (зелёный) ===== */
+#memory {
+    background-color: rgba(120, 160, 90, 0.85);
+    color: #252525;
+}
+
+/* ===== TEMPERATURE (зелёно-голубой) ===== */
+#temperature {
+    background-color: rgba(100, 160, 110, 0.85);
+    color: #252525;
+}
+
+#temperature.critical {
+    background-color: rgba(200, 90, 80, 0.9);
+    color: #202020;
+}
+
+/* ===== BACKLIGHT (голубой) ===== */
+#backlight {
+    background-color: rgba(90, 150, 140, 0.85);
+    color: #252525;
+}
+
+/* ===== LANGUAGE / KEYBOARD (голубо-синий) ===== */
+#language {
+    background-color: rgba(80, 130, 150, 0.85);
+    color: #e0e0e0;
+    padding: 0 8px;
+}
+
+#keyboard-state {
+    background-color: rgba(80, 130, 150, 0.85);
+    color: #e0e0e0;
+    padding: 0 8px;
+}
+
+/* ===== CLOCK (синий) ===== */
+#clock {
+    background-color: rgba(90, 110, 140, 0.85);
+    color: #e0e0e0;
+}
+
+/* ===== TRAY (фиолетово-синий) ===== */
+#tray {
+    background-color: rgba(100, 100, 130, 0.8);
+    padding: 0 6px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+/* ===== MODE (фиолетовый) ===== */
+#mode {
+    background-color: rgba(130, 100, 140, 0.85);
+    color: #e0e0e0;
+}
+
+/* ===== IDLE INHIBITOR (мягкий мятный) ===== */
+#idle_inhibitor {
+    background-color: rgba(130, 170, 160, 0.75);
+    color: #252525;
+}
+
+#idle_inhibitor.activated {
+    background-color: rgba(160, 200, 180, 0.85);
+    color: #252525;
+}
+
+/* ===== MPD (розово-фиолетовый) ===== */
+#mpd {
+    background-color: rgba(160, 100, 130, 0.85);
+    color: #e0e0e0;
+}
+
+#mpd.disconnected {
+    background-color: rgba(180, 90, 100, 0.85);
+    color: #202020;
+}
+
+#mpd.stopped {
+    background-color: rgba(90, 90, 100, 0.8);
+    color: #909090;
+}
+
+#mpd.paused {
+    background-color: rgba(120, 100, 120, 0.8);
+    color: #b0b0b0;
+}
+
+/* ===== SCRATCHPAD ===== */
+#scratchpad {
+    background-color: rgba(80, 80, 90, 0.8);
+    color: #b0b0b0;
+}
+
+#scratchpad.empty {
+    background-color: transparent;
+}
+
+/* ===== POWER PROFILES ===== */
+#power-profiles-daemon.performance {
+    background-color: rgba(200, 90, 80, 0.85);
+    color: #202020;
+}
+
+#power-profiles-daemon.balanced {
+    background-color: rgba(120, 150, 110, 0.85);
+    color: #252525;
+}
+
+#power-profiles-daemon.power-saver {
+    background-color: rgba(140, 170, 100, 0.85);
+    color: #252525;
+}
+
+/* ===== PRIVACY ===== */
+#privacy {
+    padding: 0;
+}
+
+#privacy-item {
+    padding: 0 5px;
+    color: #252525;
+    border-radius: 6px;
+}
+
+#privacy-item.screenshare {
+    background-color: rgba(200, 110, 90, 0.85);
+}
+
+#privacy-item.audio-in {
+    background-color: rgba(120, 160, 100, 0.85);
+}
+
+#privacy-item.audio-out {
+    background-color: rgba(90, 140, 150, 0.85);
+}
+
+/* ===== CUSTOM MEDIA ===== */
+#custom-media {
+    background-color: rgba(140, 150, 110, 0.85);
+    color: #252525;
+    min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+    background-color: rgba(110, 160, 100, 0.85);
+}
+
+#custom-media.custom-vlc {
+    background-color: rgba(190, 140, 80, 0.85);
+}
+
+/* ===== WIREPLUMBER ===== */
+#wireplumber {
+    background-color: rgba(170, 130, 100, 0.85);
+    color: #252525;
+}
+
+#wireplumber.muted {
+    background-color: rgba(100, 100, 110, 0.8);
+    color: #909090;
+}
+
+/* ===== BUTTONS ===== */
+button {
+    box-shadow: none;
+    border: none;
+    border-radius: 6px;
+}
+
+button:hover {
+    background: inherit;
+}
+
+label:focus {
+    background-color: rgba(70, 70, 80, 0.85);
+    border-radius: 6px;
+}

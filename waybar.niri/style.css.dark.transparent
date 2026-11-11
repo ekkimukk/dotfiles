@@ -1,0 +1,239 @@
+/* =============================================================================
+ *
+ * Waybar configuration – только цветные рамки, светлый текст
+ *
+ * =========================================================================== */
+
+/* -----------------------------------------------------------------------------
+ * Colors definition – светлый текст, приглушённые рамки
+ * -------------------------------------------------------------------------- */
+@define-color fg #ebdbb2;          /* светлый кремовый текст */
+
+/* Цвета рамок – те же, что были (умеренно тёмные, чтобы выделяться на светлом фоне, но сейчас фон прозрачный, они будут видны на любом фоне) */
+@define-color highlight #a67c52;
+@define-color yellow   #b08a4a;
+@define-color red      #9a4a4a;
+@define-color orange   #b06a3a;
+@define-color blue     #5a7a8a;
+@define-color green    #6a7a3a;
+@define-color purple   #7a5a7a;
+@define-color aqua     #4a7a6a;
+@define-color gray     #7a7a7a;
+
+/* -----------------------------------------------------------------------------
+ * Keyframes – фон при мигании тоже адаптируем под светлый текст
+ * -------------------------------------------------------------------------- */
+
+@keyframes blink-warning {
+  70% {
+    color: @fg;
+  }
+  to {
+    color: @fg;
+    background-color: @orange;
+  }
+}
+
+@keyframes blink-critical {
+  70% {
+    color: @fg;
+  }
+  to {
+    color: @fg;
+    background-color: @red;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+ * Base styles
+ * -------------------------------------------------------------------------- */
+
+* {
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Панель – прозрачная */
+#waybar {
+  background: transparent;
+  color: @fg;
+  font-family: "Aporetic Serif Mono";
+  font-size: 13px;
+}
+
+/* Все модули – без фона, только рамки */
+#mode,
+#network,
+#custom-keyboard-layout,
+#idle_inhibitor,
+#cpu,
+#memory,
+#backlight,
+#pulseaudio,
+#battery,
+#clock,
+#tray,
+#custom-launcher,
+#workspaces,
+#window,
+#custom-power {
+  background-color: transparent;
+  background-image: none;
+  border-radius: 6px;
+  border-width: 2px;
+  border-style: solid;
+  padding: 0.5rem 0.6rem;
+  margin: 1px 0px;
+}
+
+/* -----------------------------------------------------------------------------
+ * Индивидуальные цвета рамок (без фона)
+ * -------------------------------------------------------------------------- */
+
+#custom-launcher {
+  border-color: @highlight;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: @fg;   /* теперь светлый */
+}
+
+#workspaces {
+  border-color: @yellow;
+  font-size: 13px;
+}
+
+#workspaces button {
+  border-radius: 0px;
+  color: @fg;
+  padding: 1px 2px;
+  margin-right: 2px;
+  margin-left: 2px;
+  font-weight: normal;
+  background: transparent;
+}
+
+#workspaces button.focused {
+  background-color: transparent;
+  color: @fg;
+  font-weight: bold;
+}
+
+#workspaces button.urgent {
+  background-color: transparent;
+  color: @fg;   /* теперь светлый (было @bg) */
+}
+
+#window {
+  border-color: @blue;
+}
+
+#mode {
+  border-color: @red;
+  background-color: transparent;
+  border-radius: 6px;
+  color: @fg;
+  margin-left: 5px;
+  padding: 7px;
+}
+
+#network {
+  border-color: @green;
+}
+
+#network.disconnected {
+  color: @orange;   /* цвет текста меняется на оранжевый, но остаётся читаемым */
+}
+
+#custom-keyboard-layout {
+  border-color: @purple;
+}
+
+#idle_inhibitor {
+  border-color: @aqua;
+}
+
+#cpu {
+  border-color: @orange;
+}
+
+#cpu.warning {
+  color: @yellow;
+}
+
+#cpu.critical {
+  color: @red;
+}
+
+#memory {
+  border-color: @gray;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#memory.warning {
+  color: @yellow;
+}
+
+#memory.critical {
+  color: @red;
+  animation-name: blink-critical;
+  animation-duration: 2s;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#backlight {
+  border-color: @gray;
+}
+
+#pulseaudio {
+  border-color: @blue;
+}
+
+#pulseaudio.muted {
+  color: @orange;
+}
+
+#battery {
+  border-color: @green;
+}
+
+#battery.warning {
+  color: @yellow;
+}
+
+#battery.critical {
+  color: @red;
+}
+
+#battery.warning.discharging {
+  animation-name: blink-warning;
+  animation-duration: 2s;
+}
+
+#battery.critical.discharging {
+  animation-name: blink-critical;
+  animation-duration: 2s;
+}
+
+#clock {
+  border-color: @gray;
+  color: @fg;   /* теперь светлый */
+}
+
+#tray {
+  border-color: @purple;
+  color: @fg;
+}
+
+#custom-power {
+  border-color: @red;
+  margin-left: 15px;
+  margin-right: 15px;
+  font-size: 15px;
+  color: @red;   /* оставляем красным для заметности */
+}
